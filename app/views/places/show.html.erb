@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div class="place_banner">
+    </br>
+    </br>
+    <%= link_to "Back to the list", places_path %>
+    </br>
+    </br>
+    <span><%= @place.category %></span>
+    <h1><%= @place.title %></h1>
+
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+
+  </div>
+
+  <div class="details">
+
+    <ul>
+      <li><p><span style="font-weight: bold"> Address: </span> <%= @place.address %></p></li>
+      <li><p><span style="font-weight: bold"> Description: </span><%= @place.description %></p></li>
+      <li><p><span style="font-weight: bold"> Price: </span><%= @place.price %>€ /Hour</p></li>
+      <li><p><span style="font-weight: bold"> Equipment: </span><%= @place.equipment %></p></li>
+      <li><p><span style="font-weight: bold"> Destroy pack: </span><%= @place.destroy_pack %></p></li>
+      <li><p><span style="font-weight: bold"> Rate: </span><%= @place.rate %>/5</p></li>
+      <li><p><span style="font-weight: bold"> Sleepings: </span><%= @place.sleepings %></p></li>
+      <li><p><span style="font-weight: bold"> Tools: </span><%= @place.tools %></p></li>
+      <li><p><span style="font-weight: bold"> Owner: </span>Jawad</p></li>
+    </ul>
+
+  </div>
+
+  <%= link_to "Edit this place", edit_place_path(@place.id) %></br></br>
+
+  <p>------------------------------------------</p>
+
+
+</div>
+
+
