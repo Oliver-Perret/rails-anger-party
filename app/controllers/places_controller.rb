@@ -20,6 +20,9 @@ class PlacesController < ApplicationController
     authorize @place
     if @place.save
       redirect_to places_path(@place)
+    else
+      render :new
+    end
   end
 
   def update
@@ -43,7 +46,7 @@ class PlacesController < ApplicationController
   def place_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:place).permit(:title, :address, :description, :price, :equipment, :destroy_pack, :category, :rate, :sleepings, :tools,)
+    params.require(:place).permit(:title, :address, :description, :price, :equipment, :destroy_pack, :category, :rate, :sleepings, :tools)
   end
 
   def set_place
