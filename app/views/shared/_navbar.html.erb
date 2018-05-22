@@ -6,6 +6,9 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="topnav">
+    <input type="text" placeholder="Search..">
+  </div>
 
     <% if user_signed_in? %>
 
@@ -43,7 +46,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-    <div class="btn btn-danger">
+    <div class="btn btn-default">
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
     </div>
