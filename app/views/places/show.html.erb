@@ -33,6 +33,16 @@
 
   <p>------------------------------------------</p>
 
+<%# form BOOKING  %>
+  <%= simple_form_for [@place, @booking] do |f| %>
+
+    <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"}  %>
+
+    <%= f.submit "réserver", class: "btn btn-primary" %>
+  <% end %>
+
+  <%= link_to "back to the list", places_path %>
 
 </div>
 

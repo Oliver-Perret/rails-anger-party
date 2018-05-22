@@ -2,22 +2,21 @@ class BookingsController < ApplicationController
 
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @bookins = Booking.all
-  end
 
-  def new
-    @booking = Booking.new
-  end
 
   def create
-    @booking = Booking.create(booking_params)
-    redirect_to bookings_path(@booking)
+    @place = Place.find(params[:place_id])
+    @booking = Booking.new(booking_params)
+    @booking.place = @place
+    if @booking.save
+      redirect_to place_path(@place)
+    else
+      render "places/show"
+    end
+
   end
 
-  def show
 
-  end
 
   def destroy
     @booking.destroy
@@ -26,10 +25,10 @@ class BookingsController < ApplicationController
 
   private
 
-  def place_params
+  def booking_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:place).permit(????)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
   def set_booking
