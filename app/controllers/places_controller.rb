@@ -10,30 +10,29 @@ class PlacesController < ApplicationController
     @place = Place.new
   end
 
-  # def edit
-  #   # @task = Task.find(params[:id])
-  # end
+  def edit
+
+  end
 
   def create
     @place = Place.create(place_params)
     redirect_to places_path(@place)
   end
 
-  # def update
-  #   # @task = Task.find(params[:id])
-  #   @cocktail.update(cocktail_params)
-  #   redirect_to cocktails_path
-  #  end
+  def update
+
+    @place.update(cocktail_params)
+    redirect_to places_path
+   end
 
   def show
-    # @cocktail = Cocktail.new
+
   end
 
-  # def destroy
-  #   # @task = Task.find(params[:id])
-  #   @cocktail.destroy
-  #   redirect_to cocktails_path(@cocktail)
-  # end
+  def destroy
+    @place.destroy
+    redirect_to places_path(@place)
+  end
 
   private
 
