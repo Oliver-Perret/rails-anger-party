@@ -4,22 +4,28 @@
     <%= image_tag "logo.png", height: 50 %>
   <% end %>
 
+  <% if user_signed_in? %>
+
+      <div class="topnav">
+      <input type="text" placeholder="Search...">
+      <button class= btn btn-default >Find</button>
+    </div>
+
+  <% end %>
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
 
     <% if user_signed_in? %>
 
-    <div class="topnav">
-      <input type="text" placeholder="Search..">
-      <button class= btn btn-default >Find</button>
-  </div>
+
 
       <!-- Links when logged in -->
       <div class="btn btn-default">
         <%= link_to "Create an experience", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       </div>
-      <%= link_to "lists", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Lists", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Parties", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Help", "#", class: "navbar-wagon-item navbar-wagon-link" %>
