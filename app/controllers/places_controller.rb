@@ -21,7 +21,7 @@ class PlacesController < ApplicationController
 
   def update
 
-    @place.update(cocktail_params)
+    @place.update(place_params)
     redirect_to places_path
    end
 
