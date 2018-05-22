@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     else
       render "places/show"
     end
+
   end
 
 
@@ -24,10 +25,10 @@ class BookingsController < ApplicationController
 
   private
 
-  def place_params
+  def booking_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:place).permit(????)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
   def set_booking
