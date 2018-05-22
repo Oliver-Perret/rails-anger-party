@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: :index
   before_action :set_place, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -16,18 +16,22 @@ class PlacesController < ApplicationController
 
   def create
     @place = Place.create(place_params)
-    @place.save
-    redirect_to places_path(@place)
+    @place.owner = current_users
+    if @place.save
+      redirect_to place_path(@place)
+    else
+      render :new
+    end
   end
 
   def update
-
     @place.update(place_params)
-    redirect_to places_path
-   end
+    redirect_to place_path
+  end
 
   def show
 
+    @booking = Booking.new
   end
 
   def destroy

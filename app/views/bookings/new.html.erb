@@ -1,0 +1,14 @@
+
+<div class="container">
+  <%= simple_form_for [@place, @booking] do |f| %>
+
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+
+    <%= f.submit "réserver", class: "btn btn-primary" %>
+  <% end %>
+
+  <%= link_to "back to the list", places_path %>
+</div>
+
+
