@@ -23,8 +23,8 @@ class PlacesController < ApplicationController
   end
 
   def update
-
-    @place.update(place_params)
+    @place = current_user.places.update(place_params)
+    authorize @place
     redirect_to places_path
    end
 
@@ -33,7 +33,8 @@ class PlacesController < ApplicationController
   end
 
   def destroy
-    @place.destroy
+    @place = current_user.places.destroy
+    authorize @place
     redirect_to places_path(@place)
   end
 
