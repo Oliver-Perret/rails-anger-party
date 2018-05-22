@@ -1,10 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Place.destroy_all
 
+pierre = User.create(email: "maxime@rimbault.fr", password: "12345abcdef")
 
-pierre = User.create(name:'jean')
+Place.create(title: "Tati shop", owner: pierre, address: "14 avenue Napoléon, PARIS 75012", description: "A nice and cosy clothes shop in the heart of Paris", price: 202, equipment: "lot of stuff", destroy_pack: "Damage", category: "Shop", rate: 4, sleepings: 12, tools: "Flame thrower")
+Place.create(title: "Candy shop", owner: pierre, address: "14 avenue Napoléon, PARIS 75012", description: "A nice and cosy clothes shop in the heart of Paris", price: 359, equipment: "lot of stuff", destroy_pack: "Damage", category: "Shop", rate: 4, sleepings: 12, tools: "Flame thrower")
+Place.create(title: "Luxury villa in Spain", owner: pierre, address: "14 avenue Napoléon, PARIS 75012", description: "A nice and cosy clothes shop in the heart of Paris", price: 980, equipment: "lot of stuff", destroy_pack: "Damage", category: "Shop", rate: 4, sleepings: 12, tools: "Flame thrower")
+Place.create(title: "Cozy Alpes chalet", owner: pierre, address: "14 avenue Napoléon, PARIS 75012", description: "A nice and cosy clothes shop in the heart of Paris", price: 122, equipment: "lot of stuff", destroy_pack: "Damage", category: "Shop", rate: 4, sleepings: 12, tools: "Flame thrower")
+Place.create(title: "Old garage", owner: pierre, address: "14 avenue Napoléon, PARIS 75012", description: "A nice and cosy clothes shop in the heart of Paris", price: 235, equipment: "lot of stuff", destroy_pack: "Damage", category: "Shop", rate: 4, sleepings: 12, tools: "Flame thrower")
+Place.create(title: "Suhi restaurant", owner: pierre, address: "14 avenue Napoléon, PARIS 75012", description: "A nice and cosy clothes shop in the heart of Paris", price: 750, equipment: "lot of stuff", destroy_pack: "Damage", category: "Shop", rate: 4, sleepings: 12, tools: "Flame thrower")

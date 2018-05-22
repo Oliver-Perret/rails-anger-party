@@ -16,12 +16,13 @@ class PlacesController < ApplicationController
 
   def create
     @place = Place.create(place_params)
+    @place.save
     redirect_to places_path(@place)
   end
 
   def update
 
-    @place.update(cocktail_params)
+    @place.update(place_params)
     redirect_to places_path
    end
 
@@ -39,7 +40,7 @@ class PlacesController < ApplicationController
   def place_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:place).permit(:title, :address, :description, :price, :equipment, :destroy_pack, :category, :rate, :sleepings, :tools,)
+    params.require(:place).permit(:title, :address, :description, :price, :equipment, :destroy_pack, :category, :rate, :sleepings, :tools)
   end
 
   def set_place
