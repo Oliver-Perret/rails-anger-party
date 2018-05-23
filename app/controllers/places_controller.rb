@@ -23,7 +23,6 @@ class PlacesController < ApplicationController
 
     @place = Place.create(place_params)
     @place.owner = current_user
-
     @place = current_user.places.new(place_params)
     authorize @place
 
