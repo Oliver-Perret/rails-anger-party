@@ -1,2 +1,4 @@
 <h1>Create a new place</h1>
-<%= render 'form', place: @place %>
+<% if policy(Place).create? %>
+  <%= render 'form', place: @place %>
+<% end %>

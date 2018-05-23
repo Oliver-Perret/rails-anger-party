@@ -3,7 +3,9 @@
   <div class="cards-container">
     <div class="list-intro">
       <h1>Our places to destroy</h1>
-      <%= link_to "+ Add a new place", new_place_path, html_options = {:class=>"btn-blue"} %>
+      <% if policy(Place).create? %>
+        <%= link_to "+ Add a new place", new_place_path, html_options = {:class=>"btn-blue"} %>
+      <% end %>
     </div>
 
     <div class="row">
