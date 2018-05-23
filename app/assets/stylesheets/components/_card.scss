@@ -1,18 +1,28 @@
 /* Your card CSS code here */
-.cards{
+.cards {
   display: flex
 }
 
 .card {
-  flex :1 1 auto;
-  margin: 10px;
-  border-radius: 1px;
-  box-shadow:  0 0 10px rgba(0,0,0,0.3);
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
   transition: all 0.3s ease;
+
+
+  // --> RS: restored initial CSS code from LeWagon UI Kit, initial code below
+  // flex :1 1 auto;
+  // margin: 10px;
+  // border-radius: 1px;
+  // box-shadow:  0 0 10px rgba(0,0,0,0.3);
+  // border-radius: 1px;
 }
 
 .card-body {
-  height:180px;
+  height: 180px;
   background-size: cover;
   color:white;
   position:relative
@@ -52,7 +62,7 @@
   opacity: 0.9
 }
 
-.card-link{
+.card-link {
   position:absolute;
   top:0;
   bottom:0;
@@ -62,7 +72,7 @@
 
 }
 
-.card-footer{
+.card-footer {
   display: flex;
   align-items:center;
   justify-content: space-between;
@@ -78,9 +88,16 @@
 
 .card-user{
   position: absolute;
-  top:10px;
-  right:10px;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+  // --> RS: restored initial CSS code from LeWagon UI Kit, initial code below
+  // position: absolute;
+  // top: 10px;
+  // right: 10px;
 }
+
 .card-footer.controls {
   display: flex;
   align-items: center;
