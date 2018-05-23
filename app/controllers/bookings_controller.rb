@@ -2,10 +2,11 @@ class BookingsController < ApplicationController
 
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
-
+  def index
+    @bookings = Booking.all
+  end
 
   def create
-
     @place = Place.find(params[:place_id])
     @booking = Booking.new(booking_params)
     @booking.place = @place
@@ -17,8 +18,6 @@ class BookingsController < ApplicationController
     end
 
   end
-
-
 
   def destroy
     @booking.destroy

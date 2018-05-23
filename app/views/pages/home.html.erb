@@ -1,45 +1,35 @@
 <html>
 
-  <head>
-    <meta charset="utf-8">
-    <title>AngerParty home</title>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>AngerParty home</title>
+</head>
 
-  <body>
-
-    <div class="banner" style="background-image: url('assets/background.jpg');">
-      <div class="banner-content">
-        <h1>WELCOME HOME</h1>
-        <p>Find unique places to party , go wild and destroy everything in 190+ countries.</p>
-
-      <div class="search">
-      <input type="text" placeholder="Search...">
-    </div>
-
-        <a class="btn-green">Find</a>
-      </div>
-    </div>
+<body>
+  <div class="main-container">
+    <%= render 'shared/banner' %>
 
     <div class="container">
       <h2 class="text-center">Popular Places</h2>
-
-  <% @places.each do |place| %>
-
-      <div class="col-xs-12 col-sm-6 col-lg-4">
-
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');")">
-          <div class="card-category"><%= place.category %></div>
-          <div class="card-description">
-            <h2><%= place.title %></h2>
-            <p><%= place.price %>€ - Pack <span style="font-weight:bold"><%= place.destroy_pack %></span></p>
-          </div>
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-          <a class="card-link" href="<%= place_path(place) %>" ></a>
-        </div>
-
-      </div>
-
-    <% end %>
     </div>
-  </body>
+
+    <div class="row">
+      <% top_places = Place.last(5) %>
+      <% top_places.each do |place| %>
+        <div class="col-xs-12 col-sm-6 col-lg-2">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+            <div class="card-category"> <%= place.category %></div>
+            <div class="card-description">
+              <h2><%= place.title %></h2>
+              <p><%= place.price %>€ - Pack <span style="font-weight:bold"><%= place.destroy_pack %></span></p>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <a class="card-link" href="<%= place_path(place) %>" ></a>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</body>
 </html>

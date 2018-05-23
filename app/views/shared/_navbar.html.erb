@@ -15,20 +15,18 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-
     <% if user_signed_in? %>
 
-
-
       <!-- Links when logged in -->
-      <div class="btn btn-default">
-        <%= link_to "Create an experience", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      </div>
-      <%= link_to "Lists", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Parties", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%= link_to "Places", "/places", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Submit new place", "/places/new", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Dashboard", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <!--
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Help", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    -->
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -55,6 +53,7 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
+    <%= link_to "Discover all our Places", "/places", class: "navbar-wagon-item navbar-wagon-link" %>
     <div class="btn btn-default">
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
