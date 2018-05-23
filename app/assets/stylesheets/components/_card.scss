@@ -51,13 +51,15 @@ margin-top: 30px;
   font-weight: lighter;
   opacity:0.9;
   letter-spacing: 1px;
-  font-size: 18px
+  font-size: 18px;
+  z-index: 1;
 }
 
 .card-description{
   position:absolute;
   bottom:10px;
   left:10px;
+  z-index: 1;
 }
 
 .card-description h2 {
@@ -79,7 +81,8 @@ margin-top: 30px;
   bottom:0;
   width: 100%;
   background: black;
-  opacity:0;
+  opacity:0.2;
+  z-index: 0;
 
 }
 
@@ -88,6 +91,7 @@ margin-top: 30px;
   align-items:center;
   justify-content: space-between;
   padding: 10px;
+  z-index: 1;
   color:grey
 }
 
@@ -102,6 +106,7 @@ margin-top: 30px;
   right: 10px;
   top: 10px;
   width: 40px;
+  z-index: 1;
   border-radius: 50%;
   // --> RS: restored initial CSS code from LeWagon UI Kit, initial code below
   // position: absolute;
