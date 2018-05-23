@@ -20,7 +20,7 @@ class PlacesController < ApplicationController
 
   def create
     @place = Place.create(place_params)
-    @place.owner = current_users
+    @place.owner = current_user
     if @place.save
       redirect_to place_path(@place)
     else
