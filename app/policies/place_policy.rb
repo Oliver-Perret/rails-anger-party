@@ -8,14 +8,18 @@ class PlacePolicy < ApplicationPolicy
     return true
   end
 
+  def edit?
+    record.owner == user
+  end
+
   def update?
-    record.user == user
-    # - record: the restaurant passed to the `authorize` method in controller
+    record.owner == user
+    # - record: the place passed to the `authorize` method in controller
     # - user:   the `current_user` signed in with Devise.
   end
 
   def destroy?
-    record.user == user
+    record.owner == user
   end
 
   class Scope < Scope
