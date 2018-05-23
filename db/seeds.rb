@@ -2,7 +2,7 @@ Place.destroy_all
 
 pierre = User.create(email: "maxime@rimbault.fr", password: "12345abcdef")
 
-Place.create(title: "Tati shop", owner: pierre, address: "14 avenue Napoléon, PARIS 75012", description: "A nice and cosy clothes shop in the heart of Paris", price: 202, equipment: "lot of stuff", destroy_pack: "Damage", category: "Shop", rate: 4, sleepings: 12, tools: "Flame thrower")
+Place.create(title: "Tati shop", address: "14 avenue Napoléon, PARIS 75012", description: "A nice and cosy clothes shop in the heart of Paris", price: 202, equipment: "lot of stuff", destroy_pack: "Damage", category: "Shop", rate: 4, sleepings: 12, tools: "Flame thrower", owner: pierre)
 Place.create(title: "Candy shop", owner: pierre, address: "14 avenue Napoléon, PARIS 75012", description: "A nice and cosy clothes shop in the heart of Paris", price: 359, equipment: "lot of stuff", destroy_pack: "Damage", category: "Shop", rate: 4, sleepings: 12, tools: "Flame thrower")
 Place.create(title: "Luxury villa in Spain", owner: pierre, address: "14 avenue Napoléon, PARIS 75012", description: "A nice and cosy clothes shop in the heart of Paris", price: 980, equipment: "lot of stuff", destroy_pack: "Damage", category: "Shop", rate: 4, sleepings: 12, tools: "Flame thrower")
 Place.create(title: "Cozy Alpes chalet", owner: pierre, address: "14 avenue Napoléon, PARIS 75012", description: "A nice and cosy clothes shop in the heart of Paris", price: 122, equipment: "lot of stuff", destroy_pack: "Damage", category: "Shop", rate: 4, sleepings: 12, tools: "Flame thrower")

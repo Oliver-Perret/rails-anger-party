@@ -1,6 +1,10 @@
 class PlacesController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: :index
   before_action :set_place, only: [:show, :edit, :update, :destroy]
+
+  def home
+    @places = Place.all
+  end
 
   def index
     @places = policy_scope(Place).order(created_at: :desc)
@@ -31,8 +35,10 @@ class PlacesController < ApplicationController
     redirect_to places_path
    end
 
+
   def show
 
+    @booking = Booking.new
   end
 
   def destroy
