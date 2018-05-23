@@ -4,6 +4,8 @@
 
   <ul class="place_list">
   <% @places.each do |place| %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
     <li class="place ">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
         <div class="card-category">Popular</div>
@@ -18,11 +20,14 @@
       method: :delete,
       data: { confirm: "Are you sure?" } %>
     </li>
-    </br>
-    </br>
+    <br>
+    <br>
+    </div>
+  </div>
   <% end %>
    </ul>
 
   <%= link_to "+ Add a new place", new_place_path %>
 
 </div>
+
