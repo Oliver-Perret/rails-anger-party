@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
-    @bookings= Booking.all
+    @bookings = Booking.all
   end
 
   def create
@@ -11,6 +11,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.owner = current_user
     @booking.place = @place
+    @booking.renter = current_user
+    authorize @place
     if @booking.save
       redirect_to place_path(@place)
     else
@@ -19,10 +21,9 @@ class BookingsController < ApplicationController
 
   end
 
-
-
   def destroy
     @booking.destroy
+    authorize @place
     redirect_to bookings_path(@booking)
   end
 
@@ -36,6 +37,7 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+    authorize @place
   end
 
 end

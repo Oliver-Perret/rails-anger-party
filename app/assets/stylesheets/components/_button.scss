@@ -6,12 +6,12 @@
   border-radius: 4px;
   font-weight: bold;
   font-size: 20px;
-  background: grey;
+  background: $blue;
   text-decoration: none;
   transition: background 0.3s ease;
 }
 .btn-green:hover {
-  background: grey;
+  background: green;
   text-decoration: none;
   color: white;
 }

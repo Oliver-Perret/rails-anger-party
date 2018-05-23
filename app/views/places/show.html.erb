@@ -9,9 +9,8 @@
     <span><%= @place.category %></span>
     <h1><%= @place.title %></h1>
 
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-
-  </div>
+    <div class="place_hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://loremflickr.com/1140/400/house');">
+    </div>
 
   <div class="details">
 
@@ -34,16 +33,28 @@
   <p>------------------------------------------</p>
 
 <%# form BOOKING  %>
+<div id="booking-form">
+  <h2 class="text-center"> Réserver ce bien</h2>
   <%= simple_form_for [@place, @booking] do |f| %>
 
     <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
     <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"}  %>
 
-    <%= f.submit "réserver", class: "btn btn-primary" %>
+    <%= f.submit "réserver", class: "btn-blue" %>
   <% end %>
 
-  <%= link_to "back to the list", places_path %>
+</div>
 
 </div>
+
+
+
+
+
+
+
+
+
+
 
 
