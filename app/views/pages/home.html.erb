@@ -6,6 +6,7 @@
   </head>
 
   <body>
+    <div class="main-container">
     <%= render 'shared/banner' %>
 
     <div class="container">
@@ -13,9 +14,10 @@
     </div>
 
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-lg-4">
+
       <% top_places = Place.last(5) %>
       <% top_places.each do |place| %>
+      <div class="col-xs-12 col-sm-6 col-lg-2">
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
             <div class="card-category"> <%= place.category %></div>
             <div class="card-description">
@@ -25,10 +27,10 @@
             <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
             <a class="card-link" href="<%= place_path(place) %>" ></a>
           </div>
-
+</div>
       <% end %>
-      </div>
-    </div>
 
+    </div>
+</div>
   </body>
 </html>
