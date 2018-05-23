@@ -2,13 +2,10 @@
 
 <h1>Create a new place</h1>
 
-
-  <div class="form">
+  <% if policy(Place).create? %>
     <%= render 'form', place: @place %>
-  </div>
+  <% end %>
 
 </div>
 
-<% if policy(Place).create? %>
-  <%= render 'form', place: @place %>
-<% end %>
+
