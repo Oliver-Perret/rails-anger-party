@@ -35,8 +35,9 @@ class PlacesController < ApplicationController
   end
 
   def update
-    @place = current_user.places.update(place_params)
     authorize @place
+    @place = current_user.places.update(place_params)
+
     redirect_to places_path
    end
 
