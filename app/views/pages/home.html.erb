@@ -23,69 +23,23 @@
     <div class="container">
       <h2 class="text-center">Popular Places</h2>
 
-      <div class="cards">
+  <% @places.each do |place| %>
 
-        <div class="card">
-          <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('assets/house1.jpg');">
-            <span class="card-category">Shanghai</span>
-            <div class="card-description">
-              <h2>Jad's home</h2>
-              <p>Charming house in Shanghai</p>
-            </div>
-            <img class="card-user avatar avatar-large" src="assets/jad.png">
-            <a class="card-link" href="#"></a>
-          </div>
-          <div class="card-footer">
-            <p>Posted on 22/11/19</p>
-            <div class="controls">
-              <a href="#"><i class="fa fa-star"></i></a>
-              <a href="#"><i class="fa fa-heart"></i></a>
-              <a href="#"><i class="fa fa-share"></i></a>
-            </div>
-          </div>
-        </div>
+      <div class="col-xs-12 col-sm-6 col-lg-4">
 
-        <div class="card">
-          <div class="card-body" style="background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('assets/house2.jpeg');">
-            <span class="card-category">Rio</span>
-            <div class="card-description">
-              <h2>Gab's home</h2>
-              <p>Charming room in Rio</p>
-            </div>
-            <img class="card-user avatar avatar-large" src="assets/gab.png">
-            <a class="card-link" href="#"></a>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');")">
+          <div class="card-category"><%= place.category %></div>
+          <div class="card-description">
+            <h2><%= place.title %></h2>
+            <p><%= place.price %>€ - Pack <span style="font-weight:bold"><%= place.destroy_pack %></span></p>
           </div>
-          <div class="card-footer">
-            <p>Posted on 22/11/19</p>
-            <div class="controls">
-              <a href="#"><i class="fa fa-star"></i></a>
-              <a href="#"><i class="fa fa-heart"></i></a>
-              <a href="#"><i class="fa fa-share"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('assets/house3.jpg');">
-            <span class="card-category">Berlin</span>
-            <div class="card-description">
-              <h2>Cecile's home</h2>
-              <p>Charming room in Berlin</p>
-            </div>
-            <img class="card-user avatar avatar-large" src="assets/cecile.png">
-            <a class="card-link" href="#"></a>
-          </div>
-          <div class="card-footer">
-            <p>Posted on 22/11/19</p>
-            <div class="controls">
-              <a href="#"><i class="fa fa-star"></i></a>
-              <a href="#"><i class="fa fa-heart"></i></a>
-              <a href="#"><i class="fa fa-share"></i></a>
-            </div>
-          </div>
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+          <a class="card-link" href="<%= place_path(place) %>" ></a>
         </div>
 
       </div>
+
+    <% end %>
     </div>
   </body>
 </html>
