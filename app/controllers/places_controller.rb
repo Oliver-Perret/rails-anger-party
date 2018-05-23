@@ -20,8 +20,13 @@ class PlacesController < ApplicationController
   end
 
   def create
+
+    @place = Place.create(place_params)
+    @place.owner = current_user
+
     @place = current_user.places.new(place_params)
     authorize @place
+
     if @place.save
       redirect_to places_path(@place)
     else

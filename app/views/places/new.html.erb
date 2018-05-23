@@ -1,4 +1,14 @@
+<div class="main-container">
+
 <h1>Create a new place</h1>
+
+
+  <div class="form">
+    <%= render 'form', place: @place %>
+  </div>
+
+</div>
+
 <% if policy(Place).create? %>
   <%= render 'form', place: @place %>
 <% end %>
