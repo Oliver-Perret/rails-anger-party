@@ -1,24 +1,26 @@
 .banner {
   color: white;
-  text-align: center;
   height: 100vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-image: 'assests/background.jpg'
+  justify-content: left;
+  background-image: 'assests/1.jpg';
+  padding-left: 10%;
 
 }
 .banner h1 {
-  font-size: 50px;
+  font-size: 85px;
   font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color: white;
+  max-width: 500px;
+  text-shadow: 5px 5px rgba(255, 0, 61, 0.9);
 }
 .banner p {
   font-size: 25px;
-  font-weight: lighter;
+  font-weight: bold;
   color: rgb(255, 255, 255);
-  opacity: 0.6;
   margin-bottom: 30px;
 }
+
