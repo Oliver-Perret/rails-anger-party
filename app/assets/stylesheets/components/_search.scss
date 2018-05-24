@@ -1,18 +1,11 @@
-
-.search {
-  background-color: #ffffff ;
-  position: relative ;
-
-}
-
-.search input {
+#search-bar #query{
   width: 500px;
-  margin-right : 15px;
-  font-size: 16px ;
-  line-height: 22px ;
-  color: #484848 ;
-  border-width: 1px ;
-  border-style: solid ;
-  border-radius: 2px ;
-  border-color: #ccc ;
+  height: 60px;
+  color: $middle-gray;
+  border-radius: 6px ;
+  margin-bottom: 5px;
+  padding-left: 22px;
 }
+
+
+

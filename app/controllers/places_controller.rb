@@ -7,7 +7,13 @@ class PlacesController < ApplicationController
   end
 
   def index
-    @places = policy_scope(Place).order(created_at: :desc)
+    if params[:query].present?
+      @query = params[:query]
+      sql_query = "title ILIKE :query OR category ILIKE :query OR address ILIKE :query OR description ILIKE :query"
+      @places = policy_scope(Place).order(created_at: :desc).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @places = policy_scope(Place).order(created_at: :desc)
+    end
   end
 
   def new

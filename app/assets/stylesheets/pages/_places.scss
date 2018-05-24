@@ -1,4 +1,22 @@
 .list-intro{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.list-intro #title{
+  flex: 0 0 auto;
+}
+
+.list-intro #add-btn{
+  flex: 0 0 auto;
+}
+
+.list-intro #your-search{
+  display: flex;
+  align-items: center;
+}
+
+.list-intro #your-search p{
+  margin: 0 20px 0 0;
 }

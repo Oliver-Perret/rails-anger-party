@@ -1,10 +1,19 @@
  <div class="content">
 
   <div class="cards-container">
+
     <div class="list-intro">
-      <h1>Our places to destroy</h1>
+      <div id="title">
+        <h1>Our places to destroy</h1>
+        <div id="your-search">
+        <% if params[:query].present?%>
+          <p>Your search : <span style="font-weight: bold">"<%=@query%>" </span></p>
+          <%= link_to "Clean your search", places_path, html_options = {:class=>"btn-ghost"} %>
+        <% end %>
+        </div>
+      </div>
       <% if policy(Place).create? %>
-        <%= link_to "+ Add a new place", new_place_path, html_options = {:class=>"btn-blue"} %>
+        <%= link_to "+ Add a new place", new_place_path, html_options = {:class=>"btn-basic btn-purple btn-hover", :id=>"add-btn"} %>
       <% end %>
     </div>
 
