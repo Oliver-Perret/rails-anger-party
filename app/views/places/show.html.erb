@@ -9,7 +9,7 @@
     <span><%= @place.category %></span>
     <h1><%= @place.title %></h1>
 
-    <div class="place_hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://loremflickr.com/1140/400/house');">
+    <div class="place_hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @place.photo, height: 300, width: 400, crop: :fill %>');">
     </div>
 
   <div class="details">
