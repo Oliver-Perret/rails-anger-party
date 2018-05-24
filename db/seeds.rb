@@ -3,6 +3,7 @@ Place.destroy_all
 pierre = User.create(email: "maxime@rimbault.fr", password: "12345abcdef")
 malika = User.create(email: "tinfou.malika@gmail.com", password: "malika")
 
+
 tati = Place.create(title: "Tati shop", address: "14 avenue Napoléon, PARIS 75012", description: "A nice and cosy clothes shop in the heart of Paris", price: 202, equipment: "lot of stuff", destroy_pack: "Damage", category: "Shop", rate: 4, sleepings: 12, tools: "Flame thrower", owner: pierre)
 tati.remote_photo_url = "http://www.metropoleparis.com/1998/311/tati311.jpg"
 tati.save
@@ -29,3 +30,4 @@ old_garage.save
 sushi_resto = Place.create(title: "Suhi restaurant", owner: pierre, address: "14 avenue Napoléon, PARIS 75012", description: "A nice and cosy clothes shop in the heart of Paris", price: 750, equipment: "lot of stuff", destroy_pack: "Damage", category: "Shop", rate: 4, sleepings: 12, tools: "Flame thrower")
 sushi_resto.remote_photo_url = "http://modusushi.com/wp-content/uploads/2014/02/icg.png"
 sushi_resto.save
+
