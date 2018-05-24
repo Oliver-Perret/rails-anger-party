@@ -1,3 +1,11 @@
+
+// app/javascript/packs/map.js
+// [...]
+import { autocomplete } from '../components/autocomplete';
+
+// [...]
+autocomplete();
+
 import GMaps from 'gmaps/gmaps.js';
 
 const mapElement = document.getElementById('map');
