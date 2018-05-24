@@ -14,7 +14,18 @@ class PlacesController < ApplicationController
     else
       @places = policy_scope(Place).order(created_at: :desc)
     end
-  end
+
+    @places = Place.where.not(latitude: nil, longitude: nil)
+
+      @markers = @places.map do |place|
+        {
+          lat: place.latitude,
+          lng: place.longitude#,
+          # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        }
+      end
+    end
+
 
   def new
     @place = current_user.places.new
