@@ -3,11 +3,15 @@
   <div class="form_section">
     <h3>General information</h2>
     <%= t.input :title %>
-    <%= t.input :address %>
-    <%= t.input :sleepings %>
-    <%= t.input :description %>
-    <%= t.input :photo %>
+    <%= t.input :address, :input_html => { :value => "ex: 5 rue du petit champs Paris" } %>
+    <%= t.input :sleepings, :input_html => { :value => "5" } %>
+    <%= t.input :description, :input_html => { :value => "Un lieu superbe, pour des soirées déjantées" }  %>
+
+    <%= t.input :photo, label_html: { class: "btn-basic btn-purple btn-hover" }, input_html: { class: "hidden" } %>
     <%= t.input :photo_cache, as: :hidden %>
+
+
+
   </div>
   <div class="form_section">
   <h3>More about your place</h2>
