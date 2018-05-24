@@ -5,6 +5,7 @@ class Place < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   validates :title, presence: true,  uniqueness: true
+  validates :photo, presence: true
 
   # validates :address, presence: true,  uniqueness: true
   # validates :description, presence: true
