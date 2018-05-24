@@ -37,7 +37,6 @@ class PlacesController < ApplicationController
   end
 
   def create
-
     @place = Place.create(place_params)
     @place.owner = current_user
     @place = current_user.places.new(place_params)
@@ -53,7 +52,6 @@ class PlacesController < ApplicationController
   def update
     authorize @place
     @place = current_user.places.update(place_params)
-
     redirect_to places_path
    end
 
@@ -63,9 +61,9 @@ class PlacesController < ApplicationController
   end
 
   def destroy
-    @place = current_user.places.destroy
     authorize @place
-    redirect_to places_path(@place)
+    @place.destroy
+    redirect_to dashboard_path
   end
 
   private

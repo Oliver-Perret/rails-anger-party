@@ -23,8 +23,8 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    authorize @place
-    redirect_to bookings_path(@booking)
+    authorize @booking
+    redirect_to dashboard_path
   end
 
   private
@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
-    authorize @place
+    authorize @booking
   end
 
 end
