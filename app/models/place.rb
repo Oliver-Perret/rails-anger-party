@@ -5,7 +5,11 @@ class Place < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   validates :title, presence: true,  uniqueness: true
-  validates :photo, presence: true
+  # validates :photo, presence: true
+
+  # geocode stuff
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   # validates :address, presence: true,  uniqueness: true
   # validates :description, presence: true
