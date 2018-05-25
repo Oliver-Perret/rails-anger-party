@@ -31,7 +31,9 @@
               <h2><%= place.title %></h2>
               <p><%= place.price %>€ - Pack <span style="font-weight:bold"><%= place.destroy_pack %></span></p>
             </div>
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <%= cl_image_tag place.owner.avatar, class: "card-user"%>
+
+
             <a class="card-link" href="<%= place_path(place) %>" ></a>
           </div>
 

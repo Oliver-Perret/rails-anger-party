@@ -33,12 +33,13 @@
             <li class="place ">
               <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.place.photo, height: 300, width: 400, crop: :fill %>');">
 
-                <div class="card-category">booking.place.owner</div>
+                <div class="card-category"><%= booking.place.owner.user_name %></div>
                 <div class="card-description">
                   <h2><%= booking.place.title %></h2>
                   <p><span style="font-weight:bold"><%= booking.start_date %></span> to <span style="font-weight:bold"><%= booking.end_date %></span></p>
                 </div>
-                <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+                <%= cl_image_tag booking.place.owner.avatar, class: "card-user"%>
+
               </div>
               <%= link_to "Delete", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
             </li>
@@ -64,7 +65,8 @@
                 <h2><%= place.title %></h2>
                 <p><%= place.price %>€ - Pack <span style="font-weight:bold"><%= place.destroy_pack %></span></p>
               </div>
-              <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+                          <%= cl_image_tag place.owner.avatar, class: "card-user"%>
+
               <a class="card-link" href="<%= place_path(place) %>" ></a>
             </div>
             <%= link_to "Delete", place_path(place),
