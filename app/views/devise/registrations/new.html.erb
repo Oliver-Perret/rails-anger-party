@@ -6,9 +6,12 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
+      <%= f.input :user_name, required: true, autofocus: true %>
       <%= f.input :email, required: true, autofocus: true %>
       <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
       <%= f.input :password_confirmation, required: true %>
+      <%= f.input :avatar, required: true, label_html: { class: "btn-basic btn-purple btn-hover" }, input_html: { class: "hidden"} %>
+      <%= f.input :avatar_cache, as: :hidden %>
     </div>
 
     <div class="form-actions">
