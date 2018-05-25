@@ -15,9 +15,9 @@ class PlacesController < ApplicationController
       @places = policy_scope(Place).order(created_at: :desc)
     end
 
-    @places = Place.where.not(latitude: nil, longitude: nil)
+    @marker_places = Place.where.not(latitude: nil, longitude: nil)
 
-      @markers = @places.map do |place|
+      @markers = @marker_places.map do |place|
         {
           lat: place.latitude,
           lng: place.longitude#,
