@@ -38,8 +38,8 @@ class PlacesController < ApplicationController
 
   def create
     @place = Place.create(place_params)
+    @place.tools = params[:place][:tools].join(" ").strip
     @place.owner = current_user
-    @place = current_user.places.new(place_params)
     authorize @place
 
     if @place.save
@@ -57,6 +57,7 @@ class PlacesController < ApplicationController
 
 
   def show
+
     @booking = Booking.new
   end
 
