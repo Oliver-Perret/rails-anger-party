@@ -17,4 +17,7 @@ function openCity(evt, dashboardTab) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(dashboardTab).style.display = "block";
     evt.currentTarget.className += " active";
+
 }
+
+
