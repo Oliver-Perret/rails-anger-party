@@ -44,11 +44,14 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
+  color: $purple;
+  font-size: 18px;
+  background: none;
+  border: none;
+  font-weight: normal;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $gray;
   text-decoration: none;
 }
 

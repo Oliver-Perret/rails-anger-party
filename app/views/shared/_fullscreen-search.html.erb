@@ -1,0 +1,16 @@
+ <div id="myOverlay" class="overlay">
+  <span class="closebtn" onclick="closeSearch()" title="Close Overlay"><i class="fas fa-close"></i></span>
+  <div class="overlay-content">
+      <%= form_tag places_path, method: :get, :class => 'form-inline' do %>
+          <p>Type something and hit enter</p>
+          <%= text_field_tag :query,
+            params[:query],
+            placeholder: "Type here..(ex: Lyon, manor, big house)"
+          %>
+      <% end %>
+  </div>
+</div>
+
+
+
+

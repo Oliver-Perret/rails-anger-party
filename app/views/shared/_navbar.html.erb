@@ -7,7 +7,7 @@
       <%= image_tag "logo.png", height: 50 %>
     <% end %>
     <% if user_signed_in? %>
-      <%= render 'shared/search-form' %>
+
     <% end %>
 
   </div>
@@ -19,7 +19,9 @@
       <% if user_signed_in? %>
 
         <!-- Links when logged in -->
-
+        <button type="submit" onclick="openSearch()" style="color: #FF003D" class="navbar-wagon-link">
+          <i class="fas fa-search"></i> Search
+        </button>
         <%= link_to "Places", "/places", class: "navbar-wagon-item navbar-wagon-link" %>
         <%= link_to "Submit new place", "/places/new", class: "navbar-wagon-item navbar-wagon-link" %>
         <%= link_to "Dashboard", "/dashboard", class: "navbar-wagon-item navbar-wagon-link" %>
@@ -53,6 +55,7 @@
           </div>
         </div>
       <% else %>
+
         <!-- Login link (when logged out) -->
       <%= link_to "Discover all our Places", "/places", class: "navbar-wagon-item navbar-wagon-link" %>
       <div class="btn btn-default">
