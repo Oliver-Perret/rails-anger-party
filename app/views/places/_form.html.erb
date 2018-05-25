@@ -3,17 +3,15 @@
   <div class="form_section">
     <h3>General information</h2>
     <%= t.input :title %>
-    <%= t.input :address, :input_html => { :value => "" } %>
-    <%= t.input :sleepings, :input_html => { :value => "5" } %>
-    <%= t.input :description, :input_html => { :value => "" }  %>
-
+    <%= t.input :address, :input_html => { :placeholder => "ex: 5 rue du petit champs Paris" } %>
+    <%= t.input :sleepings, :input_html => { :placeholder => "5" } %>
+    <%= t.input :description, :input_html => { :placeholder => "Un lieu superbe, pour des soirées déjantées" }  %>
     <%= t.input :photo, label_html: { class: "btn-basic btn-purple btn-hover" }, input_html: { class: "hidden"} %>
     <%= t.input :photo_cache, as: :hidden %>
   </div>
   <div class="form_section">
   <h3>More about your place</h2>
     <%= t.input :equipment %>
-
    <div class="multiple-check">
 
          <fieldset class="form-group radio_buttons optional place_destroy_pack">
