@@ -9,9 +9,6 @@
 
     <%= t.input :photo, label_html: { class: "btn-basic btn-purple btn-hover" }, input_html: { class: "hidden"} %>
     <%= t.input :photo_cache, as: :hidden %>
-
-
-
   </div>
   <div class="form_section">
   <h3>More about your place</h2>
@@ -22,7 +19,9 @@
   <div class="form_section">
     <h3>Destroy options </h2>
     <%= t.input :price %>
-    <%= t.input :destroy_pack, as: :radio_buttons, collection: [['Soil'], ['Damage'], ['Destroy']], label_method: :second, value_method: :first %>
+    <div class="middle">
+      <%= t.input :destroy_pack, as: :radio_buttons, collection: [['Soil'], ['Damage'], ['Destroy']], label_method: :second, value_method: :first, input_html: { class: "box"} %>
+    </div>
   </div>
 
 </br>
