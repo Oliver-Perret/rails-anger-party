@@ -37,16 +37,16 @@ class PlacesController < ApplicationController
   end
 
   def create
-    @place = Place.create(place_params)
-    @place.tools = params[:place][:tools].join(" ").strip
+    @place = Place.new(place_params)
     @place.owner = current_user
-    authorize @place
-
-    if @place.save
+    @place.tools = params[:place][:tools].join(" ").strip
+    if @place.save!
       redirect_to places_path(@place)
     else
       render :new
     end
+    authorize @place
+
   end
 
   def update
