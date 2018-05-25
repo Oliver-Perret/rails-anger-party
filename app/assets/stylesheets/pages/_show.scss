@@ -4,7 +4,6 @@ background-size: cover;
 height: 400px;
 }
 
-
 .show-content {
   margin-top: 60px;
   display: flex;
@@ -12,8 +11,27 @@ height: 400px;
   flex-wrap: wrap;
 }
 
-
 #show_map {
  height: 300px;
  margin-top: 50px;
+}
+
+.details li{
+  list-style-type: none;
+  padding: 30px 30px 15px 30px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.1),0 2px 2px 0 rgba(0,0,0,0.19) !important;
+}
+
+.details ul{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.grid-container{
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: auto auto auto;
 }

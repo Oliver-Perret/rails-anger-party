@@ -18,7 +18,7 @@
       <% top_places.each do |place| %>
         <div class="col-xs-12 col-sm-6 col-lg-4">
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path place.photo, height: 300, width: 400, crop: :fill %>');">
-            <div class="card-category"> <%= place.category %></div>
+            <div class="card-category">Villa</div>
             <div class="card-description">
               <h2><%= place.title %></h2>
               <p><%= place.price %>€ - Pack <span style="font-weight:bold"><%= place.destroy_pack %></span></p>
