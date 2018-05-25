@@ -36,13 +36,13 @@
 
 <%# form BOOKING  %>
 <div id="booking-form">
-  <h2 class="text-center"> Réserver ce bien</h2>
+  <h2 class="text-center"> Book this place</h2>
   <%= simple_form_for [@place, @booking] do |f| %>
 
     <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
     <%= f.input :end_date, as: :string, required: false, input_html: {id: "range_end"}  %>
 
-    <%= f.submit "réserver", class: "btn-basic btn-purple btn-hover" %>
+    <%= f.submit "Confirm Booking", class: "btn-basic btn-purple btn-hover" %>
   <% end %>
 
 </div>
