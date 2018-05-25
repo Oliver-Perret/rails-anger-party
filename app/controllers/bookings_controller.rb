@@ -6,6 +6,9 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
+  def edit
+  end
+
   def create
     @place = Place.find(params[:place_id])
     @booking = Booking.new(booking_params)
@@ -14,24 +17,21 @@ class BookingsController < ApplicationController
     @booking.renter = current_user
     authorize @place
     if @booking.save
-      redirect_to place_path(@place)
+      redirect_to dashboard_path
     else
       render "places/show"
     end
-
   end
 
   def destroy
+    authorize @booking
     @booking.destroy
-
     redirect_to dashboard_path
   end
 
   private
 
   def booking_params
-    # *Strong params*: You need to *whitelist* what can be updated by the user
-    # Never trust user data!
     params.require(:booking).permit(:start_date, :end_date)
   end
 

@@ -19,7 +19,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.owner == user
+    return true
   end
 
   class Scope < Scope
