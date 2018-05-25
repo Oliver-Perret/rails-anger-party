@@ -1,8 +1,13 @@
 Place.destroy_all
+User.destroy_all
 
-pierre = User.create(email: "maxime@rimbault.fr", password: "12345abcdef")
-malika = User.create(email: "tinfou.malika@gmail.com", password: "malika")
+pierre = User.create!(email: "maxime@rimbault.fr", password: "12345abcdef", user_name: "Pierre")
+pierre.remote_avatar_url = "https://orig00.deviantart.net/c91f/f/2010/014/b/c/avatar_by_eggar919.jpg"
+pierre.save
 
+malika = User.create!(email: "tinfou.malika@gmail.com", password: "malika")
+malika.remote_avatar_url = "http://resize1-parismatch.ladmedia.fr/r/625,417,center-middle,ffffff/img/var/news/storage/images/paris-match/people/malika-menard-affole-ses-fans-en-maillot-de-bain-1321241/21924914-1-fre-FR/Malika-Menard-affole-ses-fans-en-maillot-de-bain.jpg"
+malika.save
 
 tati = Place.create(title: "Tati shop", address: "16 villa gaudelet, PARIS 75011", description: "A nice and cosy clothes shop in the heart of Paris", price: 202, equipment: "lot of stuff", destroy_pack: "Damage", category: "Shop", rate: 4, sleepings: 12, tools: "Flame thrower", owner: pierre)
 tati.remote_photo_url = "http://www.metropoleparis.com/1998/311/tati311.jpg"

@@ -6,27 +6,143 @@
     <%= t.input :address, :input_html => { :placeholder => "ex: 5 rue du petit champs Paris" } %>
     <%= t.input :sleepings, :input_html => { :placeholder => "5" } %>
     <%= t.input :description, :input_html => { :placeholder => "Un lieu superbe, pour des soirées déjantées" }  %>
-
     <%= t.input :photo, label_html: { class: "btn-basic btn-purple btn-hover" }, input_html: { class: "hidden"} %>
     <%= t.input :photo_cache, as: :hidden %>
-
-
-
   </div>
   <div class="form_section">
   <h3>More about your place</h2>
     <%= t.input :equipment %>
-    <%= t.input :tools, as: :check_boxes, collection: [['0', 'Mass'], ['1', 'Flame thrower'], ['2', 'Hammer']], label_method: :second, value_method: :first %>
+   <div class="multiple-check">
 
+         <fieldset class="form-group radio_buttons optional place_destroy_pack">
+
+           <label class="form-control-label integer optional">Destroying tools your propose</label>
+
+           <div class="flex">
+             <label>
+               <input name="place[tools]" value="" type="hidden">
+               <div class="form-check">
+                 <input value="Soil" name="place[tools]" id="place_destroy_pack_soil" type="checkbox">
+                 <div class="mass box">
+                  <i class="fi fas fa-basketball-ball"></i></br>
+                  <span for="place_destroy_pack_soil">Ball</span>
+                   <p class="pack_descr">Throw basket ball everywhere and see what happen</p>
+                 </div>
+               </div>
+             </label>
+
+             <label>
+               <input name="place[tools]" value="" type="hidden">
+               <div class="form-check">
+                 <input value="Damage" name="place[tools]" id="place_destroy_pack_soil" type="checkbox">
+                 <div class="animal box">
+                   <i class="fi fab fa-sticker-mule"></i></br>
+                   <span for="place_destroy_pack_soil">Animal</span>
+                   <p class="pack_descr">Mule, pig, cow... because animals can party to</p>
+                 </div>
+               </div>
+             </label>
+
+             <label>
+               <input name="place[tools]" value="" type="hidden">
+               <div class="form-check">
+                 <input value="Destroy" name="place[tools]" id="place_destroy_pack_soil" type="checkbox">
+                 <div class="flame box">
+                   <i class="fi fas fa-fire"></i></br>
+                   <span for="place_destroy_pack_soil">Flame thrower</span>
+                   <p class="pack_descr">A bit risky but firefighters will join the party :D !</p>
+                 </div>
+               </div>
+             </label>
+
+           </div>
+
+         </fieldset>
+
+       </div>
   </div>
+
   <div class="form_section">
-    <h3>Destroy options </h2>
+
+    <h3>Destroy options </h3>
+
+    <p>Decide how far your guests can go while partying.</br> <span style="font-weight:bold;"> NB : AngerParty
+      <span style="color:red;"> is not responsible</span> if it goes further than expected...</p></span>
+
+    <div class="multiple-radio">
+
+      <fieldset class="form-group radio_buttons optional place_destroy_pack">
+
+        <div class="flex">
+          <label>
+            <input name="place[destroy_pack]" value="" type="hidden">
+            <div class="form-check">
+              <input value="Soil" name="place[destroy_pack]" id="place_destroy_pack_soil" type="radio">
+              <div class="soil box">
+                <span for="place_destroy_pack_soil">Soil</span>
+                <p class="pack_descr">Lorem ipsum dolores askimet lorem ispum</p>
+              </div>
+            </div>
+          </label>
+
+          <label>
+            <input name="place[destroy_pack]" value="" type="hidden">
+            <div class="form-check">
+              <input value="Damage" name="place[destroy_pack]" id="place_destroy_pack_soil" type="radio">
+              <div class="damage box">
+                <span for="place_destroy_pack_soil">Damage</span>
+                <p class="pack_descr">Lorem ipsum dolores askimet lorem ispum</p>
+              </div>
+            </div>
+          </label>
+
+          <label>
+            <input name="place[destroy_pack]" value="" type="hidden">
+            <div class="form-check">
+              <input value="Destroy" name="place[destroy_pack]" id="place_destroy_pack_soil" type="radio">
+              <div class="destroy box">
+                <span for="place_destroy_pack_soil">Destroy</span>
+                <p class="pack_descr">Lorem ipsum dolores askimet lorem ispum</p>
+              </div>
+            </div>
+          </label>
+        </div>
+
+      </fieldset>
+
+    </div>
     <%= t.input :price %>
-    <%= t.input :destroy_pack, as: :radio_buttons, collection: [['Soil'], ['Damage'], ['Destroy']], label_method: :second, value_method: :first %>
+
+
   </div>
 
 </br>
 
-<%= t.submit html_options = {:class=>"btn-basic btn-purple btn-hover"} %>
+<%= t.submit html_options = {:class=>"btn-basic btn-pink btn-hover"} %>
 
 <% end %>
+<!--
+
+ <div class="middle">
+
+      <label>
+        <input type="radio" name="destroy_pack" checked/>
+        <div class="front-end box">
+          <span>Soil</span>
+        </div>
+      </label>
+
+      <label>
+        <input type="radio" name="destroy_pack"/>
+        <div class="back-end box">
+          <span>Damage</span>
+        </div>
+      </label>
+
+      <label>
+        <input type="radio" name="destroy_pack"/>
+        <div class="back-end box">
+          <span>Destroy</span>
+        </div>
+      </label>
+    </div> -->

@@ -1,5 +1,6 @@
 <div class="container">
 
+
   <div class="place_banner">
     </br>
     </br>
@@ -11,43 +12,48 @@
 
     <div class="place_hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @place.photo, height: 300, width: 400, crop: :fill %>');">
     </div>
+  </div>
+
+
+<div class="show-content">
 
   <div class="details">
 
-    <ul>
-      <li><p><span style="font-weight: bold"> Address: </span> <%= @place.address %></p></li>
-      <li><p><span style="font-weight: bold"> Description: </span><%= @place.description %></p></li>
-      <li><p><span style="font-weight: bold"> Price: </span><%= @place.price %>€ /Hour</p></li>
-      <li><p><span style="font-weight: bold"> Equipment: </span><%= @place.equipment %></p></li>
-      <li><p><span style="font-weight: bold"> Destroy pack: </span><%= @place.destroy_pack %></p></li>
-      <li><p><span style="font-weight: bold"> Rate: </span><%= @place.rate %>/5</p></li>
-      <li><p><span style="font-weight: bold"> Sleepings: </span><%= @place.sleepings %></p></li>
-      <li><p><span style="font-weight: bold"> Tools: </span><%= @place.tools %></p></li>
-      <li><p><span style="font-weight: bold"> Owner: </span></p></li>
-    </ul>
+      <ul>
+        <li><p><span style="font-weight: bold"> Address: </span> <%= @place.address %></p></li>
+        <li><p><span style="font-weight: bold"> Description: </span><%= @place.description %></p></li>
+        <li><p><span style="font-weight: bold"> Price: </span><%= @place.price %>€ /Hour</p></li>
+        <li><p><span style="font-weight: bold"> Equipment: </span><%= @place.equipment %></p></li>
+        <li><p><span style="font-weight: bold"> Destroy pack: </span><%= @place.destroy_pack %></p></li>
+        <li><p><span style="font-weight: bold"> Rate: </span><%= @place.rate %></p></li>
+        <li><p><span style="font-weight: bold"> Sleepings: </span><%= @place.sleepings %></p></li>
+        <li><p><span style="font-weight: bold"> Tools: </span><%= @place.tools %></p></li>
+        <li><p><span style="font-weight: bold"> Owner: </span><%= @place.owner.user_name %></p></li>
+      </ul>
+
+      <%= link_to "Edit this place", edit_place_path(@place.id) %></br></br>
+
 
   </div>
 
-  <%= link_to "Edit this place", edit_place_path(@place.id) %></br></br>
 
-  <p>------------------------------------------</p>
+  <%# form BOOKING  %>
+  <div id="booking-form">
+    <h2 class="text-center"> Book this place</h2>
+    <%= simple_form_for [@place, @booking] do |f| %>
+
+      <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
+      <%= f.input :end_date, as: :string, required: false, input_html: {id: "range_end"}  %>
+
+      <%= f.submit "Confirm booking", class: "btn-basic btn-purple btn-hover" %>
+    <% end %>
 
   </div>
-
-<%# form BOOKING  %>
-<div id="booking-form">
-  <h2 class="text-center"> Book this place</h2>
-  <%= simple_form_for [@place, @booking] do |f| %>
-
-    <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
-    <%= f.input :end_date, as: :string, required: false, input_html: {id: "range_end"}  %>
-
-    <%= f.submit "Confirm Booking", class: "btn-basic btn-purple btn-hover" %>
-  <% end %>
 
 </div>
 
-
-
+<% unless @place.address.blank? %>
+  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:purple|#{@place.address}", id:"show_map" %>
+<% end %>
 </div>
 

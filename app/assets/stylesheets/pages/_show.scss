@@ -3,3 +3,17 @@
 background-size: cover;
 height: 400px;
 }
+
+
+.show-content {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+#show_map {
+ height: 300px;
+ margin-top: 50px;
+}

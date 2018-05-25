@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Dax:400,900');
+$font: 'Dax',
+sans-serif;
+$white: #fff;
+$green: #007e90;
+
+.pack_descr{
+  font-size: 0.8em !important;
+  font-weight: normal;
+  color: $purple;
+}
+
+.multiple-radio .flex{
+ display: flex;
+ justify-content: space-between;
+}
+
+.multiple-radio {
+  width: 100%;
+  h1 {
+    font-family: $font;
+    color: $white;
+  }
+  input[type="radio"] {
+    display: none;
+    &:checked {
+      + .box {
+        background-color: $purple;
+        span {
+          color: white;
+          transform: translateY(70px);
+          &:before {
+            transform: translateY(0px);
+            opacity: 1;
+          }
+        }
+        .pack_descr {
+          color: white;
+        }
+      }
+    }
+  }
+  .box {
+    width: 190px;
+    height: 210px;
+    background-color: #fff;
+    transition: all 250ms ease;
+    will-change: transition;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    font-family: "Dax", sans-serif;
+    font-weight: 900;
+    border-radius: 5px;
+    padding: 30px 30px 30px 30px;
+    &:active{
+      transform: translateY(10px);
+    }
+    span {
+      position:relative;
+      transform: translate(0, 60px);
+      transition: all 300ms ease;
+      font-size: 1.4em;
+      user-select: none;
+      color: $purple;
+      margin-top:20px;
+      color: $purple;
+
+      &:before {
+        font-size: 1.4em;
+        font-family: FontAwesome;
+        display: block;
+        transform: translateY(-80px);
+        opacity: 0;
+        transition: all 300ms ease-in-out;
+        font-weight: normal;
+        color: white;
+      }
+    }
+  }
+  .soil {
+    span {
+      &:before {
+        content: '\f043';
+      }
+    }
+  }
+  .damage {
+    span {
+      &:before {
+        content: '\f0e7';
+      }
+    }
+  }
+  .destroy {
+    span {
+      &:before {
+        content: '\f1e2';
+      }
+    }
+  }
+}
